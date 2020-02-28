@@ -1,0 +1,25 @@
+<ul>
+  {{#each walk in model}}
+  <li>
+           <p>Walk: {{walk.title}},</p>
+           <p>Author: {{walk.author}}</p>
+           <p>Location: {{walk.location}}</p>
+           {{#each point in walk.points}}
+               <p>pin: {{point.title}}</p>
+               <p>{{point.point.latitude}},
+                  {{point.point.longitude}}</p>
+           {{/each}}
+        </li>
+    {{else}}
+        <li>No walks found.</li>
+    {{/each}}
+</ul>
+
+{{leaflet-map
+  width="600px"
+  height="400px"
+  latitude="41.23"
+  longitude="2.09"
+  zoom=10
+  walks=walksMarkers
+}}

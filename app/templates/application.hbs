@@ -1,3 +1,9 @@
 <h2 id="title">Welcome to Ember</h2>
+<ul>
+    <li>{{link-to 'Home' 'index'}}</li>
+    <li>{{#link-to 'walks' (query-params location="41.23,2.09")}}
+        Walks{{/link-to}}</li>
+</ul>
+<hr>
 
 {{outlet}}
